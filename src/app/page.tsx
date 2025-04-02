@@ -61,7 +61,7 @@ export default function Home() {
         })
       }
        <div className="flex items-center justify-center cursor-auto hover:bg-gray-300/50 p-2 rounded" >
-        <img src="/more.svg" alt="" />
+       开
         </div>
     </div>
   );
