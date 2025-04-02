@@ -42,13 +42,13 @@ export default function Home() {
 
 
   return (
-    <div className="w-full h-full  flex  p-1 gap-1">
+    <div className="w-full h-full  flex  p-1 gap-1 ">
       {
         prompts
           ?.filter(x=>x.isPinned)
           ?.map(x => {
           return (
-            <div className="flex items-center" onClick={()=>handleClick(x.id)}  key={x.id}>
+            <div className="flex items-center  flex-1" onClick={()=>handleClick(x.id)}  key={x.id}>
               <div  className="cursor-auto hover:bg-gray-300/50 p-1.5 rounded" dangerouslySetInnerHTML={{ __html: x.icon }} />
               {
                 x.id==="2"?<><img onClick={()=>handleOpenTranslate(x.id)} className="hover:bg-amber-500" src="/up.svg" alt="" /></>:null

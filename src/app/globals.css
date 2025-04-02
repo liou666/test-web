@@ -33,3 +33,7 @@ body {
   height: auto;
 
 }
+
+.nextjs-toast {
+  display: none !important;
+}
