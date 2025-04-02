@@ -25,7 +25,7 @@ export default function Home() {
 
   const handleClick = (id: string) => {
     send({
-      name: 'do_dynamic_menu',
+      name: 'open_dynamic_menu',
       type: "functional",
       url: '/panels/' + id,
     })
@@ -33,7 +33,7 @@ export default function Home() {
 
   const handleOpenTranslate = (id: string) => {
     send({
-      name: 'do_dynamic_menu',
+      name: 'open_dynamic_menu',
       type: "translate",
       from: "root",
       url: '/translate/'
