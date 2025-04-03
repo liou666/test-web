@@ -50,7 +50,8 @@ let newPrompts = prompts?.map(x => {
                 {x.name}
               </span>
               
-              <div onClick={() => {
+              <div onClick={(e) => {
+                e.stopPropagation()
                 togglePin(x.id)
               }} className='ml-auto p-1 rounded-lg cursor-pointer hover:bg-gray-300/50'>
                 {x.isPinned ? (
