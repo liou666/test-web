@@ -40,7 +40,7 @@ let newPrompts = prompts?.map(x => {
 
 
   return (
-    <div className="min-w-[300px] min-h-[600px] flex flex-col p-1">
+    <div className="w-full h-full flex flex-col p-1">
       {
         prompts?.map(x => {
           return (
