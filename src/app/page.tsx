@@ -42,7 +42,7 @@ export default function Home() {
 
   const handleClickMore = () => {
     send({
-      name: 'open_dynamic_menu',
+      name: 'do_dynamic_menu_action',
       url: '/more'
     })
   }
