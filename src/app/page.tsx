@@ -40,6 +40,13 @@ export default function Home() {
     })
   }
 
+  const handleClickMore = () => {
+    send({
+      name: 'open_dynamic_menu',
+      url: '/more'
+    })
+  }
+
 
   return (
     <div className="w-full h-full  flex  p-1 gap-1 ">
@@ -60,7 +67,7 @@ export default function Home() {
           )
         })
       }
-       <div className="flex items-center justify-center cursor-auto hover:bg-gray-300/50 p-2 rounded" >
+       <div onClick={()=>handleClickMore()} className="flex items-center justify-center cursor-auto hover:bg-gray-300/50 p-2 rounded" >
        开
         </div>
     </div>
