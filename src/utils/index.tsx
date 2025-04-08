@@ -11,3 +11,13 @@ export const send =async (preload: Preload) => {
     console.error(error)
   }
 }
+export const sendIpc = async (preload: Preload) => {
+  try {
+    // @ts-ignore
+
+    const res = await navigator.clipboard.veles(JSON.stringify(preload))
+    return res
+  } catch (error) {
+    console.error(error)
+  }
+}

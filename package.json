@@ -3,16 +3,23 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 8081",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "ahooks": "^3.8.4",
+    "antd": "^5.24.6",
+    "clsx": "^2.1.1",
+    "js-cookie": "^3.0.5",
+    "lucide-react": "^0.487.0",
     "next": "15.2.4",
+    "next-intl": "^4.0.2",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-custom-scroll": "^7.0.0",
+    "react-dom": "^19.0.0",
+    "ts-pattern": "^5.7.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

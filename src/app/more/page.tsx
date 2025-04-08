@@ -3,6 +3,7 @@ import { send } from '@/utils'
 import { defaultPrompts } from '@/utils/prompts'
 import { useLocalStorageState } from 'ahooks'
 import React from 'react'
+
 type Prompt = {
   id: string
   name: string
