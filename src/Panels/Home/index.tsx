@@ -48,7 +48,7 @@ export default function PanelHome() {
     setSelectText(text || '')
 
     sendIpc({
-      name: 'open_dynamic_menu',
+      name: 'do_dynamic_menu_action',
       type: 'functional',
       url: 'http://localhost:8081/panels?type=result',
     })

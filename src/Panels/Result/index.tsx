@@ -16,10 +16,10 @@ export default function Result() {
   useMount(async () => {})
 
   return (
-    <div className="h-full w-full flex flex-col gap-4 p-3 min-w-[500px] min-h-[300px]">
+    <div className="h-full w-full flex flex-col gap-4 p-3 min-w-[300px] min-h-[300px]">
       <div
         className={clsx(
-          'border border-gray-300 rounded-md p-2 cursor-pointer ',
+          'border border-gray-300 rounded-md p-2 cursor-pointer w-full',
           isExpend ? 'max-h-[100px] overflow-y-auto' : 'truncate'
         )}
         onClick={() => setIsExpend(!isExpend)}
