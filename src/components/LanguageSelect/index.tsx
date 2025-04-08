@@ -1,7 +1,8 @@
+'use client'
 import { ConfigProvider, Select, SelectProps } from 'antd'
 import Cookies from 'js-cookie'
 import { ArrowRight } from 'lucide-react'
-import { useLocale, useTranslations } from 'next-intl'
+import { useLocale,  } from 'next-intl'
 import { FC, useEffect, useMemo, useState } from 'react'
 import { LanguagesList } from './LanguagesList'
 import  useOnce  from '@/hooks/useOnce'
@@ -26,7 +27,6 @@ const LanguageSelect: FC<Props> = ({
   disabledSubLang,
   disabledTargetLang,
 }) => {
-  const t = useTranslations()
   const renderOptions: SelectProps['optionRender'] = (option, info) => {
     const ename = LanguagesList.find(l => l.code === option.value)?.ename
     return ename ? (
@@ -86,7 +86,7 @@ const LanguageSelect: FC<Props> = ({
           <Select.Option value="auto">
             <div className="flex justify-between gap-2 font-normal-14 ">
               <div className="">
-                {t('lp.products.traslator.translatorTool.autoDetect')}
+               auto
               </div>
               {detectLang && (
                 <div className="text-[--gpts-black-text-color3] ">

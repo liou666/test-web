@@ -8,7 +8,6 @@ import { Input, Select } from 'antd'
 import { ChangeEventHandler, FC, useMemo, useState } from 'react'
 
 // import { CustomScroll } from 'react-custom-scroll'
-import { useTranslations } from 'next-intl'
 import classNames from 'clsx'
 import { Search, ArrowUp } from 'lucide-react'
 
@@ -24,7 +23,6 @@ export default function Translate() {
       listenStorageChange: true,
     }
   )
-  const t = useTranslations('home.setting')
   const [inputValue, setInputValue] = useState<string>('')
   const [selectDropdownOpen, setSelectDropdownOpen] = useState(false)
 
@@ -55,14 +53,12 @@ export default function Translate() {
     setTranslateLang(item)
   }
   return (
-    <div>
-      <div className="library-setting-language h-[calc(100vh-30px)] overflow-y-auto min-w-[300px]">
+      <div className="library-setting-language h-[calc(100vh-30px)] overflow-y-auto min-w-[300px] min-h-[500px]">
         <div className="w-full p-4 flex flex-col gap-[2px]">
           <Input
             value={inputValue}
             onChange={handleInputChange}
             prefix={<Search style={{ marginRight: 3 }} />}
-            placeholder={t('search-placeholder')}
             style={{ boxShadow: selectDropdownOpen ? 'none' : 'initial' }}
             className="font-normal-16 border-none bg-color-grey-fill2-normal hover:bg-color-grey-fill2-normal focus:border-none focus:shadow-none"
           />
@@ -91,12 +87,11 @@ export default function Translate() {
                 {/* <IconEmpty className="w-[80px] h-[80px]" /> */}
                 null
               <div className="font-normal-12 text-color-text-primary-3 pt-[4px]">
-                {t('no-result')}
+               no result
               </div>
             </div>
           )}
         </div>
-      </div>
     </div>
   )
 }
