@@ -68,7 +68,7 @@ export default function PanelMore() {
   }
 
   return (
-    <div className="min-w-[300px] flex flex-col p-1">
+    <div className="min-w-[300px] flex flex-col p-1 min-h-[300px] overflow-y-auto custom-scrollbar">
       {readPrompts
         // ?.filter(x => x.isPinned)
         ?.map(x => {

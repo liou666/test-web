@@ -53,45 +53,41 @@ export default function Translate() {
     setTranslateLang(item)
   }
   return (
-      <div className="library-setting-language h-[calc(100vh-30px)] overflow-y-auto min-w-[300px] min-h-[500px]">
-        <div className="w-full p-4 flex flex-col gap-[2px]">
-          <Input
-            value={inputValue}
-            onChange={handleInputChange}
-            prefix={<Search style={{ marginRight: 3 }} />}
-            style={{ boxShadow: selectDropdownOpen ? 'none' : 'initial' }}
-            className="font-normal-16 border-none bg-color-grey-fill2-normal hover:bg-color-grey-fill2-normal focus:border-none focus:shadow-none"
-          />
-          {filteredLanguageList.length > 0 ? (
-            filteredLanguageList.map((item, index) => (
-              <div
-                key={item.code}
-                onClick={() => handleClickOption(item)}
-                className={classNames(
-                  'w-full rounded-[8px] cursor-pointer py-[4px] px-[8px]',
-                  item.code === language?.code
-                    ? 'bg-color-brand-primary-focus'
-                    : 'hover:bg-color-grey-fill2-normal'
-                )}
-              >
-                <div className="font-normal-14 text-color-text-primary-1">
-                  {item.ename}
-                </div>
-                <div className="font-normal-12 text-color-text-primary-4">
-                  {item.language}
-                </div>
-              </div>
-            ))
-          ) : (
-            <div className="w-full h-auto py-[26px] flex flex-col items-center justify-center">
-                {/* <IconEmpty className="w-[80px] h-[80px]" /> */}
-                null
-              <div className="font-normal-12 text-color-text-primary-3 pt-[4px]">
-               no result
-              </div>
+    <div className="library-setting-language h-[300px] min-w-[200px] flex flex-col p-1 ">
+    <Input
+      value={inputValue}
+      onChange={handleInputChange}
+      prefix={<Search style={{ marginRight: 3 }} />}
+      style={{ boxShadow: selectDropdownOpen ? 'none' : 'initial' }}
+      className="font-normal-16 border-none !bg-color-grey-fill2-normal hover:bg-color-grey-fill2-normal "
+    />
+    <div className="flex-1 overflow-y-auto custom-scrollbar h-full max-h-[calc(100%-42px)]">
+      {filteredLanguageList.length > 0 ? (
+        filteredLanguageList.map((item, index) => (
+          <div
+            key={item.code}
+            onClick={() => handleClickOption(item)}
+            className={classNames(
+              'w-full rounded-[8px] cursor-pointer py-[4px] px-[8px]',
+              item.code === language?.code
+                ? 'bg-color-brand-primary-focus'
+                : 'hover:bg-color-grey-fill2-normal'
+            )}
+          >
+            <div className="font-normal-14 text-color-text-primary-1">
+              {item.ename}
             </div>
-          )}
+            <div className="font-normal-12 text-color-text-primary-4">
+              {item.language}
+            </div>
+          </div>
+        ))
+      ) : (
+        <div className="w-full h-auto py-[26px] flex flex-col items-center justify-center">
+          null
         </div>
+      )}
     </div>
+  </div>
   )
 }
