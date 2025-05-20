@@ -6,11 +6,6 @@ const useDark = () => {
 
   useEffect(() => {
     const isDark = localStorage.getItem("theme") === "dark"
-    const type = isDark ? 'dark' : 'light'
-    sendIpc({
-      name: 'on_theme_changed',
-      type
-    })
     setIsDark(isDark)
   }, [])
 
