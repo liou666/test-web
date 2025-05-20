@@ -1,16 +1,22 @@
 import { sendIpc } from "@/utils"
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
 const useDark = () => {
-  const [isDark, setIsDark] = useState(false)
+  const [isDark, setIsDark] = useState(localStorage.getItem("theme") === "dark")
+
+  // useEffect(() => {
+  //   const isDark = localStorage.getItem("theme") === "dark"
+  //   setIsDark(isDark)
+  //   console.log("11111")
+  // }, [])
+
+  const first = useRef(true)
 
   useEffect(() => {
-    const isDark = localStorage.getItem("theme") === "dark"
-    setIsDark(isDark)
-  }, [])
-
-
-  useEffect(() => {
+    if (first.current) {
+      first.current = false
+      return
+    }
     if (isDark) {
       document.documentElement.classList.add("dark")
       localStorage.setItem("theme", "dark")
