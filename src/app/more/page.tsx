@@ -3,7 +3,7 @@ import { send } from '@/utils'
 import { defaultPrompts } from '@/utils/prompts'
 import { useLocalStorageState } from 'ahooks'
 import React from 'react'
-
+import useDark from '@/hooks/useDark'
 type Prompt = {
   id: string
   name: string
@@ -38,10 +38,13 @@ let newPrompts = prompts?.map(x => {
     })
   }
 
+  const {isDark,setIsDark} = useDark()
+
+
 
 
   return (
-    <div className="min-w-[300px] flex flex-col p-1">
+    <div className="min-w-[300px] flex flex-col p-1 bg-background">
       {
         prompts?.map(x => {
           return (
@@ -65,6 +68,10 @@ let newPrompts = prompts?.map(x => {
           )
         })
       }
+
+      <button onClick={()=>setIsDark(!isDark)} className='w-full bg-gray-300/50 p-2 rounded'>
+        {isDark ? 'Dark' : 'Light'}
+      </button>
     </div>
   )
 }
